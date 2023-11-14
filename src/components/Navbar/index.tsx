@@ -48,10 +48,16 @@ const Navbar: React.FC = () => {
         </ul>
         <div className="order-0 md:order-1 flex items-center gap-1">
           <div className="flex items-center gap-1">
-            <Button className="text-lg h-8 w-8" variant="light">
+            <Button
+              className="text-lg h-8 w-8 hover:bg-gray-100"
+              variant="light"
+            >
               <BsGithub />
             </Button>
-            <Button className="text-lg h-8 w-8" variant="light">
+            <Button
+              className="text-lg h-8 w-8 hover:bg-gray-100"
+              variant="light"
+            >
               <FiSun />
             </Button>
           </div>
