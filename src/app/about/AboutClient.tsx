@@ -23,19 +23,22 @@ const AboutClient = () => {
       name: "Appharu",
       image: Appharu,
       position: "Full-Stack Developer",
-      duration: "2022 - Present",
+      duration: "2022 - Now",
+      link: "https://www.appharu.com/",
     },
     {
       name: "Stockinerary",
       image: Stockinerary,
       position: "React Native Developer",
-      duration: "2023 - Present",
+      duration: "2023 - Now",
+      link: "https://stockinerary.com/",
     },
     {
       name: "Tech Himalaya",
       image: TechHimalaya,
       position: "React | NextJS Developer",
       duration: "2021 - 2022",
+      link: "https://techhimalaya.com/",
     },
   ];
 
@@ -89,10 +92,12 @@ const AboutClient = () => {
 
         <motion.div
           variants={animationItemVariants}
-          className="grid grid-cols-4"
+          className="grid grid-cols-4 gap-3"
         >
-          <p className="col-span-1 text-neutral-500">About</p>
-          <div className="col-span-3 md:col-span-2 tracking-wider">
+          <p className="col-span-4 md:col-span-1 text-neutral-500 text-lg md:text-sm">
+            About
+          </p>
+          <div className="col-span-4 md:col-span-2 tracking-wider">
             <p className="">
               I'm a dedicated web developer, passionate about creating polished
               websites using cutting-edge technologies. During work hours, I
@@ -109,51 +114,63 @@ const AboutClient = () => {
 
         <motion.div
           variants={animationItemVariants}
-          className="grid grid-cols-4"
+          className="grid grid-cols-4 gap-3"
         >
-          <p className="col-span-1 text-neutral-500">Work</p>
-          <div className="col-span-3 md:col-span-2 tracking-wider flex flex-col gap-6">
+          <p className="col-span-4 md:col-span-1 text-neutral-500 text-lg md:text-sm">
+            Work
+          </p>
+          <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
             <p className="">
               Over my web development journey across various companies, I've
               honed my skills in creating dynamic and user-friendly websites,
               adapting to diverse tech stacks and contributing to the success of
               each team I've been a part of.
             </p>
-            {works.map((work, ind) => {
-              return (
-                <div key={ind} className="flex gap-3 items-center">
-                  <div className="flex items-center justify-center border dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-14 w-14">
-                    <Image
-                      className="object-cover saturate-200"
-                      src={work.image}
-                      height={42}
-                      width={42}
-                      alt={work.name}
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col md:flex-row justify-between gap-1">
-                    <div className="flex flex-col gap-1">
-                      <p>{work.position}</p>
-                      <p className="text-neutral-500">{work.name}</p>
+            <div className="flex flex-col gap-6 group hover:text-neutral-400 dark:hover:text-neutral-500 transition-colors">
+              {works.map((work, ind) => {
+                return (
+                  <Link
+                    key={ind}
+                    href={work.link}
+                    target="_blank"
+                    role="button"
+                    className="flex gap-3 items-center hover:opacity-100 group/item hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+                  >
+                    <div className="flex items-center justify-center border dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-14 w-14">
+                      <Image
+                        className="object-cover saturate-200 group-hover:opacity-50 group-hover/item:opacity-100 transition-opacity"
+                        src={work.image}
+                        height={42}
+                        width={42}
+                        alt={work.name}
+                      />
                     </div>
-                    <div>
-                      <p className="text-neutral-500 md:text-end">
-                        {work.duration}
-                      </p>
+                    <div className="flex flex-1 justify-between gap-1">
+                      <div className="flex flex-col gap-1">
+                        <p>{work.position}</p>
+                        <p className="text-neutral-500 dark:group-hover:text-neutral-500 group-hover:text-neutral-400 group-hover/item:text-neutral-700 dark:group-hover/item:text-neutral-300 transition-colors">
+                          {work.name}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="md:text-end">{work.duration}</p>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
 
         <motion.div
           variants={animationItemVariants}
-          className="grid grid-cols-4"
+          className="grid grid-cols-4 gap-3"
         >
-          <p className="col-span-1 text-neutral-500">Connect</p>
-          <div className="col-span-3 md:col-span-2 tracking-wider flex flex-col gap-6">
+          <p className="col-span-4 md:col-span-1 text-neutral-500 text-lg md:text-sm">
+            Connect
+          </p>
+          <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
             <p>
               Feel free to contact me via my social media links. I appreciate
               your outreach.

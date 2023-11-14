@@ -39,7 +39,7 @@ const SocialLinkClient = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-3 w-2/5 mt-16 md:mt-24">
+    <div className="grid grid-cols-1 gap-3 px-5 md:px-0 md:w-2/5 mt-16 md:mt-24">
       <motion.div
         initial="initial"
         animate="animate"
@@ -63,7 +63,7 @@ const SocialLinkClient = () => {
             Manoram Baudel
           </motion.p>
           <motion.div variants={animationItemVariants} className="md:w-2/3">
-            <p className="leading-normal tracking-wider text-center">
+            <p className="leading-normal tracking-wider text-center px-3 md:px-0">
               Hey there, I'm Manoram Baudel. Web development is my passion—I
               thrive on crafting seamless, user-friendly websites that marry
               creativity with cutting-edge tech. I'm all about transforming
