@@ -134,7 +134,7 @@ const AboutClient = () => {
                     href={work.link}
                     target="_blank"
                     role="button"
-                    className="flex gap-3 items-center hover:opacity-100 group/item hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+                    className="flex gap-3 items-center group/item hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
                   >
                     <div className="flex items-center justify-center border dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-14 w-14">
                       <Image
@@ -148,7 +148,7 @@ const AboutClient = () => {
                     <div className="flex flex-1 justify-between gap-1">
                       <div className="flex flex-col gap-1">
                         <p>{work.position}</p>
-                        <p className="text-neutral-500 dark:group-hover:text-neutral-500 group-hover:text-neutral-400 group-hover/item:text-neutral-700 dark:group-hover/item:text-neutral-300 transition-colors">
+                        <p className="text-neutral-500 group-hover:text-neutral-400 dark:group-hover:text-neutral-500 group-hover/item:text-neutral-700 dark:group-hover/item:text-neutral-300 transition-colors">
                           {work.name}
                         </p>
                       </div>
