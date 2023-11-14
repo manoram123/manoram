@@ -10,9 +10,6 @@ export const metadata: Metadata = {
   title: "Home | Manoram Baudel",
   description: "I am a software developer.",
   openGraph: {
-    title: "Manoram Baudel",
-    description:
-      "Hey there, I'm Manoram Baudel. Web development is my passion—I thrive on crafting seamless, user-friendly websites that marry creativity with cutting-edge tech. I'm all about transforming ideas into captivating digital experiences.",
     siteName: "https://manoram.vercel.app",
     type: "website",
     images: ["/images/manoram.jpg"],
