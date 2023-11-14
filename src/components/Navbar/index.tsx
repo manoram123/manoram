@@ -35,14 +35,14 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="">
-      <div className="px-5 md:px-0 md:w-3/5 mx-auto flex items-center justify-between flex-wrap">
+      <div className="bg-white dark:bg-neutral-950 rounded-lg px-5 md:px-0 md:w-3/5 mx-auto flex items-center justify-between flex-wrap">
         <div className="order-0">
           <Link href={"/"} className="text-neutral-950 dark:text-neutral-100">
             <Logo size={52} />
           </Link>
         </div>
         <ul
-          className={`bg-neutral-200 md:bg-transparent list-none ${
+          className={`bg-neutral-200 dark:bg-neutral-800 md:bg-transparent dark:md:bg-transparent list-none ${
             isToggled ? "flex flex-col" : "hidden"
           } md:flex md:flex-row order-1 md:order-0 w-full md:w-fit md:py-0 py-3 rounded-lg items-center gap-3 md:gap-6 shadow-md md:shadow-none`}
         >
