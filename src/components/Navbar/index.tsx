@@ -30,12 +30,12 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="">
+    <div className="bg-white dark:bg-neutral-950">
       <div className="px-5 md:px-0 md:w-3/5 mx-auto flex items-center justify-between flex-wrap">
         <div className="order-0">
-          <div className="text-neutral-950 dark:text-neutral-100">
+          <Link href={"/"} className="text-neutral-950 dark:text-neutral-100">
             <Logo size={52} />
-          </div>
+          </Link>
         </div>
         <ul className="bg-neutral-200 md:bg-transparent list-none flex flex-col md:flex-row order-1 md:order-0 w-full md:w-fit md:py-0 py-3 rounded-lg items-center gap-3 md:gap-6">
           {NAVLINKS.map((val) => {
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
             <DarkModeSwitch />
           </div>
           <div className="block md:hidden">
-            <Button className="h-8 w-8 text-lg" variant="light">
+            <Button title="Menu" className="h-8 w-8 text-lg" variant="light">
               <FiMenu />
             </Button>
           </div>

@@ -22,7 +22,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <div className="main min-h-screen text-sm dark:bg-neutral-950 dark:text-neutral-300 font-medium text-neutral-700 flex flex-col">
-            <Navbar />
+            <div className="fixed top-0 w-full">
+              <Navbar />
+            </div>
             {children}
           </div>
         </ThemeProvider>

@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import ProfileImage from "../../public/images/manoram.jpg";
-import { FiMapPin } from "react-icons/fi";
+import { FiArrowUpRight, FiMapPin } from "react-icons/fi";
 import { BsMortarboard } from "react-icons/bs";
 import { Variants, motion } from "framer-motion";
+import Link from "next/link";
+import TechSkills from "@/components/TechSkills";
 
 export default function Home() {
   const container: Variants = {
@@ -28,7 +30,7 @@ export default function Home() {
         variants={container}
         className="px-5 md:px-0 md:w-3/5 mx-auto flex flex-col gap-10"
       >
-        <motion.div className="mt-24">
+        <motion.div className="mt-32">
           <motion.p
             variants={itemVariants}
             className="text-4xl font-bold tracking-tighter"
@@ -61,13 +63,34 @@ export default function Home() {
             </p>
           </div>
         </motion.div>
-        <motion.div variants={itemVariants} className="md:w-2/3">
+        <motion.div
+          variants={itemVariants}
+          className="md:w-2/3 flex flex-col gap-6"
+        >
           <p className="leading-normal tracking-wider">
             Hey there, I'm Manoram Baudel. Web development is my passion—I
             thrive on crafting seamless, user-friendly websites that marry
             creativity with cutting-edge tech. I'm all about transforming ideas
             into captivating digital experiences.
           </p>
+          <div className="flex gap-6">
+            <Link
+              href={"mailto:baudelmanoram123@gmail.com"}
+              className="flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
+            >
+              <FiArrowUpRight className="text-lg" /> Email Me
+            </Link>
+
+            <Link
+              href={"mailto:baudelmanoram123@gmail.com"}
+              className="flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
+            >
+              <FiArrowUpRight className="text-lg" /> More ways to connect
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <TechSkills />
         </motion.div>
       </motion.div>
     </main>

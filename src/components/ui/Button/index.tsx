@@ -14,9 +14,11 @@ const Button: React.FC<ButtonProps> = ({
   variant = "default",
   children,
   onClick,
+  ...rest
 }) => {
   return (
     <button
+      {...rest}
       onClick={onClick}
       className={`rounded-md flex items-center justify-center transition-colors ${className} ${
         VARIANTS[variant as keyof typeof VARIANTS]
