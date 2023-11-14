@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <div className="main min-h-screen text-sm dark:bg-neutral-950 dark:text-neutral-300 font-medium text-neutral-700 flex flex-col pb-8">
-            <div className="fixed top-0 w-full h-14">
+            <div className="fixed z-10 top-0 w-full h-14">
               <Navbar />
             </div>
             <div className="flex-1 mt-14">{children}</div>

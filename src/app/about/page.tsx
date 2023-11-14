@@ -1,5 +1,11 @@
 import React from "react";
 import AboutClient from "./AboutClient";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Manoram Baudel",
+  description: "Hello World! I am a software developer and UI designer.",
+};
 
 const About = () => {
   return (

@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="h-full">
+    <div className="h-full md:bg-white md:dark:bg-neutral-950">
       <div className="h-full bg-white dark:bg-neutral-950 rounded-lg px-5 md:px-0 md:w-3/5 mx-auto flex items-center justify-between flex-wrap">
         <div className="order-0">
           <Link href={"/"} className="text-neutral-950 dark:text-neutral-100">
