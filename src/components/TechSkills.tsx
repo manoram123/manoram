@@ -14,7 +14,7 @@ const TechSkills: React.FC = () => {
     { name: "Github", logo: Github },
   ];
   return (
-    <div className="mt-4 flex justify-between flex-wrap gap-14">
+    <div className="mt-4 flex md:justify-between flex-wrap gap-20 md:gap-14">
       {techs.map((tech) => {
         return (
           <Image
