@@ -30,10 +30,10 @@ export default function Home() {
         variants={container}
         className="px-5 md:px-0 md:w-3/5 mx-auto flex flex-col gap-10"
       >
-        <motion.div className="mt-32">
+        <motion.div className="mt-24 md:mt-32">
           <motion.p
             variants={itemVariants}
-            className="text-4xl font-bold tracking-tighter"
+            className="text-3xl md:text-4xl font-bold tracking-tighter"
           >
             Manoram Baudel
           </motion.p>
