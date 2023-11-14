@@ -22,13 +22,15 @@ const PhotoGallery = () => {
 
   return (
     <motion.div variants={animationContainer} className="flex gap-3">
-      {gallery.map((image) => {
+      {gallery.map((image, ind) => {
         return (
           <motion.div
             variants={imageAnimationVariant}
             whileHover={{ scale: 1.3, zIndex: 1, rotate: 0 }}
             key={image.name}
-            className="relative h-54 w-48 rounded-lg overflow-hidden"
+            className={`relative h-54 w-48 rounded-lg overflow-hidden ${
+              ind === 0 || (ind === 1 && "hidden md:block")
+            }`}
           >
             <Image
               className="h-full w-full object-cover"
@@ -36,6 +38,7 @@ const PhotoGallery = () => {
               width={500}
               src={image.image}
               alt={image.name}
+              quality={90}
             />
           </motion.div>
         );

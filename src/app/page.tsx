@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import ProfileImage from "../../public/images/manoram.jpg";
+import ProfileImage from "@/public/images/manoram.jpg";
 import { FiArrowUpRight, FiMapPin } from "react-icons/fi";
 import { BsMortarboard } from "react-icons/bs";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import TechSkills from "@/components/TechSkills";
 import { animationContainer, animationItemVariants } from "@/common/constants";
@@ -69,7 +69,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href={"mailto:baudelmanoram123@gmail.com"}
+              href={"/social-links"}
               className="flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
             >
               <FiArrowUpRight className="text-lg" /> More ways to connect

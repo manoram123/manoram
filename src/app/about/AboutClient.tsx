@@ -8,6 +8,14 @@ import Appharu from "@/public/appharu.svg";
 import Stockinerary from "@/public/stockinerary.svg";
 import TechHimalaya from "@/public/tech-himalaya.svg";
 import Image from "next/image";
+import { FiArrowUpRight } from "react-icons/fi";
+import {
+  BsEnvelopeAtFill,
+  BsGithub,
+  BsInstagram,
+  BsLinkedin,
+} from "react-icons/bs";
+import Link from "next/link";
 
 const AboutClient = () => {
   const works = [
@@ -28,6 +36,29 @@ const AboutClient = () => {
       image: TechHimalaya,
       position: "React | NextJS Developer",
       duration: "2021 - 2022",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      name: "Email",
+      link: "mailto:baudelmanoram123@gmail.com",
+      icon: <BsEnvelopeAtFill />,
+    },
+    {
+      name: "Github",
+      link: "https://github.com/manoram123",
+      icon: <BsGithub />,
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/manoram-baudel-6158b91b9/",
+      icon: <BsLinkedin />,
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/manoram_baudel/",
+      icon: <BsInstagram />,
     },
   ];
 
@@ -81,14 +112,17 @@ const AboutClient = () => {
           className="grid grid-cols-4"
         >
           <p className="col-span-1 text-neutral-500">Work</p>
-          <div className="col-span-3 md:col-span-2 tracking-wider flex flex-col gap-4">
+          <div className="col-span-3 md:col-span-2 tracking-wider flex flex-col gap-6">
+            <p className="">
+              Over my web development journey across various companies, I've
+              honed my skills in creating dynamic and user-friendly websites,
+              adapting to diverse tech stacks and contributing to the success of
+              each team I've been a part of.
+            </p>
             {works.map((work, ind) => {
               return (
-                <div className="flex gap-3 items-center">
-                  <div
-                    key={ind}
-                    className="flex items-center justify-center border dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-14 w-14"
-                  >
+                <div key={ind} className="flex gap-3 items-center">
+                  <div className="flex items-center justify-center border dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 rounded-lg h-14 w-14">
                     <Image
                       className="object-cover saturate-200"
                       src={work.image}
@@ -111,6 +145,37 @@ const AboutClient = () => {
                 </div>
               );
             })}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={animationItemVariants}
+          className="grid grid-cols-4"
+        >
+          <p className="col-span-1 text-neutral-500">Connect</p>
+          <div className="col-span-3 md:col-span-2 tracking-wider flex flex-col gap-6">
+            <p>
+              Feel free to contact me via my social media links. I appreciate
+              your outreach.
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              {socialLinks.map((val) => {
+                return (
+                  <Link
+                    key={val.name}
+                    href={val.link}
+                    target="_blank"
+                    className="flex items-center gap-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors border dark:border-neutral-800 px-4 py-4"
+                  >
+                    <span className="text-xl">{val.icon}</span>
+                    <span>{val.name}</span>
+                    <span className="ms-auto">
+                      <FiArrowUpRight className="text-lg" />
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </motion.div>
