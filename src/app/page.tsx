@@ -6,45 +6,32 @@ import { BsMortarboard } from "react-icons/bs";
 import { Variants, motion } from "framer-motion";
 import Link from "next/link";
 import TechSkills from "@/components/TechSkills";
+import { animationContainer, animationItemVariants } from "@/common/constants";
 
 export default function Home() {
-  const container: Variants = {
-    initial: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    },
-    animate: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    },
-  };
-
-  const itemVariants: Variants = {
-    initial: { y: 14, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
-    <main className="flex-1">
+    <main className="">
       <motion.div
         initial="initial"
         animate="animate"
-        variants={container}
+        variants={animationContainer}
         className="px-5 md:px-0 md:w-3/5 mx-auto flex flex-col gap-10"
       >
-        <motion.div className="mt-24 md:mt-32">
+        <motion.div className="mt-16 md:mt-24">
           <motion.p
-            variants={itemVariants}
+            variants={animationItemVariants}
             className="text-3xl md:text-4xl font-bold tracking-tighter"
           >
             Manoram Baudel
           </motion.p>
           <motion.p
-            variants={itemVariants}
+            variants={animationItemVariants}
             className="text-neutral-500 dark:text-neutral-400"
           >
             Hello World! I am a software developer and UI designer.
           </motion.p>
         </motion.div>
-        <motion.div variants={itemVariants} className="flex gap-10">
+        <motion.div variants={animationItemVariants} className="flex gap-10">
           <Image
             className="h-24 w-24 rounded-full object-cover"
             width={500}
@@ -64,7 +51,7 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
-          variants={itemVariants}
+          variants={animationItemVariants}
           className="md:w-2/3 flex flex-col gap-6"
         >
           <p className="leading-normal tracking-wider">
@@ -89,7 +76,7 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-        <motion.div variants={itemVariants}>
+        <motion.div variants={animationItemVariants}>
           <TechSkills />
         </motion.div>
       </motion.div>
