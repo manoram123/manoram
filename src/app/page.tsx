@@ -11,7 +11,7 @@ export default function Home() {
       transition: { staggerChildren: 0.05, staggerDirection: -1 },
     },
     animate: {
-      transition: { staggerChildren: 0.05, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
     },
   };
 
@@ -28,11 +28,17 @@ export default function Home() {
         variants={container}
         className="px-5 md:px-0 md:w-3/5 mx-auto flex flex-col gap-10"
       >
-        <motion.div variants={itemVariants} className="mt-24">
-          <motion.p className="text-4xl font-bold tracking-tighter">
+        <motion.div className="mt-24">
+          <motion.p
+            variants={itemVariants}
+            className="text-4xl font-bold tracking-tighter"
+          >
             Manoram Baudel
           </motion.p>
-          <motion.p className="text-neutral-500">
+          <motion.p
+            variants={itemVariants}
+            className="text-neutral-500 dark:text-neutral-400"
+          >
             Hello World! I am a software developer and UI designer.
           </motion.p>
         </motion.div>
@@ -44,7 +50,7 @@ export default function Home() {
             src={ProfileImage}
             alt={"profile"}
           />
-          <div className="text-neutral-500 flex flex-col gap-2">
+          <div className="text-neutral-500 dark:text-neutral-400 flex flex-col gap-2">
             <p className="flex items-center gap-2">
               <FiMapPin />
               <span>Kathmandu, Nepal</span>

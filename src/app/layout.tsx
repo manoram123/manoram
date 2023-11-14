@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { getCookie, setCookie } from "cookies-next";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="main min-h-screen text-sm font-medium text-neutral-700 flex flex-col">
-          <Navbar />
-          {children}
-        </div>
+        <ThemeProvider>
+          <div className="main min-h-screen text-sm dark:bg-neutral-950 dark:text-neutral-300 font-medium text-neutral-700 flex flex-col">
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

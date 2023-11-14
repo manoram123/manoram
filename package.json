@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "cookies-next": "^4.0.0",
     "framer-motion": "^10.16.4",
     "next": "14.0.2",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
