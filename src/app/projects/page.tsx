@@ -7,7 +7,7 @@ type ProjectProps = {
   projects: Array<BlogType>;
 };
 
-const Projects: React.FC<ProjectProps> = ({ projects }) => {
+const Projects = ({ projects }: ProjectProps) => {
   return (
     <div className="">
       <div className="px-5 md:px-0 md:w-3/5 mx-auto">
