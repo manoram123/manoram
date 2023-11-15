@@ -7,8 +7,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://manoram.vercel.app"),
   title: "Home | Manoram Baudel",
-  description: "I am a software developer.",
+  description: "Hello World! I am a software developer and UI designer.",
   openGraph: {
     siteName: "https://manoram.vercel.app",
     type: "website",

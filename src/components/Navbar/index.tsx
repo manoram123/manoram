@@ -20,17 +20,17 @@ const Navbar: React.FC = () => {
       routeName: "about",
     },
     {
-      href: "#",
+      href: "/blog",
       name: "Blog",
       routeName: "blog",
     },
     {
-      href: "#",
+      href: "/tech",
       name: "Tech",
       routeName: "tech",
     },
     {
-      href: "#",
+      href: "/projects",
       name: "Projects",
       routeName: "projects",
     },
