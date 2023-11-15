@@ -91,7 +91,7 @@ const TechClient = () => {
               Frontend
             </p>
             <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {techs.frontend.map((val) => {
                   return (
                     <Link
@@ -121,7 +121,7 @@ const TechClient = () => {
               Backend
             </p>
             <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {techs.backend.map((val) => {
                   return (
                     <Link
@@ -151,7 +151,7 @@ const TechClient = () => {
               Version Control & Deployment
             </p>
             <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {techs.version.map((val) => {
                   return (
                     <Link
@@ -181,7 +181,7 @@ const TechClient = () => {
               Design & Prototyping
             </p>
             <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {techs.design.map((val) => {
                   return (
                     <Link
@@ -211,7 +211,7 @@ const TechClient = () => {
               Collaboration
             </p>
             <div className="col-span-4 md:col-span-2 tracking-wider flex flex-col gap-6">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {techs.collaboration.map((val) => {
                   return (
                     <Link
