@@ -1,8 +1,14 @@
 import { fetchBlog } from "@/helper/fetchBlog";
+import { Metadata } from "next";
 import React from "react";
-import HomeClient from "./HomeClient";
+import Blogs from "./page";
 
-const Home = async () => {
+export const metadata: Metadata = {
+  title: "Blogs | Manoram Baudel",
+  description: "Recent blog posts.",
+};
+
+const Layout = async () => {
   // Fetch data from Hashnode GraphQL API
   const query = `
   query Publication {
@@ -35,7 +41,8 @@ const Home = async () => {
   `;
 
   const blogs = await fetchBlog(query);
-  return <HomeClient blogs={blogs?.posts} />;
+
+  return <Blogs blogs={blogs ? blogs.posts : null} />;
 };
 
-export default Home;
+export default Layout;

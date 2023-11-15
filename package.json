@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "cookies-next": "^4.0.0",
     "framer-motion": "^10.16.4",
+    "mongoose": "^8.0.0",
     "next": "14.0.2",
     "next-themes": "^0.2.1",
     "react": "^18",

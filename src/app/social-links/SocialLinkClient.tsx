@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import { FiArrowUpRight } from "react-icons/fi";
 import {
+  BsDribbble,
   BsEnvelopeAtFill,
   BsGithub,
   BsInstagram,
@@ -35,6 +36,11 @@ const SocialLinkClient = () => {
       name: "Instagram",
       link: "https://www.instagram.com/manoram_baudel/",
       icon: <BsInstagram />,
+    },
+    {
+      name: "Dribbble",
+      link: "https://dribbble.com/SPYDEi3825",
+      icon: <BsDribbble />,
     },
   ];
 

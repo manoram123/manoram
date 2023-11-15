@@ -82,7 +82,7 @@ const AboutClient = () => {
           </motion.h1>
           <motion.p
             variants={animationItemVariants}
-            className="text-neutral-500 dark:text-neutral-400"
+            className="text-neutral-500 dark:text-neutral-400 mt-2"
           >
             Hello World! I am a software developer and UI designer.
           </motion.p>
@@ -192,6 +192,12 @@ const AboutClient = () => {
                   </Link>
                 );
               })}
+              <Link
+                href={"/social-links"}
+                className="mt-2 flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
+              >
+                <FiArrowUpRight className="text-lg" /> More ways to connect
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -74,7 +74,7 @@ const TechClient = () => {
           </motion.h1>
           <motion.p
             variants={animationItemVariants}
-            className="text-neutral-500 dark:text-neutral-400 md:w-3/5"
+            className="text-neutral-500 dark:text-neutral-400 md:w-3/5 mt-2"
           >
             These are the technologies I am using as a software developer –
             where code meets capability, and creativity meets functionality.
