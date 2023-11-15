@@ -95,6 +95,7 @@ const HomeClient: React.FC<HomeProps> = ({ blogs }) => {
                 {blogs.map((blog) => {
                   return (
                     <Link
+                      key={blog.node.slug}
                       href={`/blog/${blog.node.slug}`}
                       className="flex items-center justify-between gap-10 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
                     >
