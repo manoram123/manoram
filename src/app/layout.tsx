@@ -3,16 +3,16 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { fetchBlog } from "@/helper/fetchBlog";
-import Home from "./page";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://manoram.vercel.app"),
-  title: "Home | Manoram Baudel",
+  title: "Manoram Baudel",
   description: "Hello World! I am a software developer and UI designer.",
   openGraph: {
+    title: "Manoram Baudel",
+    description: "Hello World! I am a software developer and UI designer.",
     siteName: "https://manoram.vercel.app",
     type: "website",
     images: ["/images/manoram.jpg"],
