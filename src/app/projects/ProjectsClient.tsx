@@ -2,13 +2,8 @@
 import { animationContainer, animationItemVariants } from "@/common/constants";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaFigma } from "react-icons/fa";
 import Link from "next/link";
-import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
-import { TbBrandNextjs, TbBrandDjango } from "react-icons/tb";
-import { SiTailwindcss, SiMongodb, SiVercel, SiCanva } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { BsBootstrapFill, BsGithub, BsSlack, BsTrello } from "react-icons/bs";
+import { FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
 import { BlogType } from "@/types/blog";
 

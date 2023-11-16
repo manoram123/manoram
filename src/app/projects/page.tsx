@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import React from "react";
 import ProjectsClient from "./ProjectsClient";
 import { BlogType } from "@/types/blog";

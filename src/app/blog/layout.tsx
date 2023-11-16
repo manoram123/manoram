@@ -42,7 +42,7 @@ const Layout = async () => {
 
   const blogs = await fetchBlog(query);
 
-  return <Blogs blogs={blogs ? blogs.posts : null} />;
+  return <Blogs blogs={blogs ? blogs.posts : []} />;
 };
 
 export default Layout;
