@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import ProfileImage from "@/public/images/manoram.jpg";
-import { FiArrowUpRight, FiMapPin } from "react-icons/fi";
+import { FiArrowUpRight, FiChevronRight, FiMapPin } from "react-icons/fi";
 import { BsMortarboard } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -119,6 +119,15 @@ const HomeClient: React.FC<HomeProps> = ({ blogs }) => {
                     </Link>
                   );
                 })}
+                <div className="flex">
+                  <Link
+                    href={"/blog"}
+                    className="flex gap-1 hover:gap-2 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all"
+                  >
+                    View All
+                    <FiChevronRight className="text-lg" />
+                  </Link>
+                </div>
               </div>
             </div>
           ) : (

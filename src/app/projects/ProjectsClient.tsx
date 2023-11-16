@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
-import { BlogType } from "@/types/blog";
+import { ProjectType } from "@/types/project";
+import Placeholder from "@/public/images/placeholder.jpg";
 
 type ProjectClientProps = {
-  projects: Array<BlogType>;
+  projects: Array<ProjectType>;
 };
 
 const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
@@ -42,36 +43,36 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
             projects.map((project) => {
               return (
                 <motion.div
-                  key={project.node.slug}
+                  key={project.slug}
                   variants={animationItemVariants}
                   className="grid grid-cols-6 gap-6"
                 >
                   <div className="col-span-6 md:col-span-2 rounded-md overflow-hidden">
                     <Image
                       className="h-40 object-cover"
-                      src={project.node.coverImage.url}
+                      src={project?.node?.coverImage?.url || Placeholder}
                       priority
                       height={500}
                       width={500}
-                      alt={project.node.title}
+                      alt={project.slug || ""}
                     />
                   </div>
                   <div className="col-span-6 md:col-span-4 tracking-wider flex flex-col gap-2">
                     <p className="text-xl font-bold tracking-tight flex items-center gap-2">
-                      {project.node.title}{" "}
+                      {project.name}{" "}
                       <span className="text-neutral-500 dark:text-neutral-400 text-xs">
                         &#x2022;
                       </span>{" "}
                       <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                        {new Date(project.node.publishedAt).getFullYear()}
+                        {project.date}
                       </span>
                     </p>
                     <p className="text-neutral-500 dark:text-neutral-400">
-                      {project.node.brief}
+                      {project?.node?.brief}
                     </p>
                     <Link
                       className="mt-2 flex items-center gap-1 hover:gap-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all duration-300"
-                      href={`/project/${project.node.slug}`}
+                      href={`/projects/${project.slug}`}
                     >
                       <span>Read More</span>
                       <span>

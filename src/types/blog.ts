@@ -9,10 +9,14 @@ export type BlogType = {
       url: string;
     };
     author: {
+      name: string;
       username: string;
       profilePicture: string;
     };
     readTimeInMinutes: number;
     views: number;
+    tags: Array<{
+      name: string;
+    }>;
   };
 };

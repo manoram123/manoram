@@ -194,7 +194,7 @@ const AboutClient = () => {
               })}
               <Link
                 href={"/social-links"}
-                className="mt-2 flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
+                className="col-span-2 mt-2 flex gap-1 items-center text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-colors"
               >
                 <FiArrowUpRight className="text-lg" /> More ways to connect
               </Link>

@@ -1,9 +1,8 @@
-import { PROJECTS } from "@/common/projects";
 import { fetchSingle } from "@/helper/fetchBlog";
 import React from "react";
-import ProjectDetailsClient from "./ProjectDetailsClient";
+import BlogDetailsClient from "./BlogDetailsClient";
 
-const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
+const BlogDetails = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   // Fetch data from Hashnode GraphQL API
@@ -21,6 +20,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           url
         }
         author {
+          name
           username
           profilePicture
         }
@@ -34,15 +34,14 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   `;
 
   const blog = await fetchSingle(query);
-  const project = PROJECTS.find((project) => project.slug === slug);
 
   return (
     <div className="">
       <div className="px-5 md:px-0 md:w-3/5 mx-auto">
-        <ProjectDetailsClient blog={blog?.post} project={project} />
+        <BlogDetailsClient blog={blog?.post} />
       </div>
     </div>
   );
 };
 
-export default ProjectDetails;
+export default BlogDetails;
