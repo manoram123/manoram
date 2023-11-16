@@ -1,5 +1,23 @@
-import { BlogType } from "@/types/blog";
 import BlogClient from "./BlogClient";
+
+type BlogType = {
+  node: {
+    title: string;
+    slug: string;
+    brief: string;
+    content: { markdown: string };
+    publishedAt: Date;
+    coverImage: {
+      url: string;
+    };
+    author: {
+      username: string;
+      profilePicture: string;
+    };
+    readTimeInMinutes: number;
+    views: number;
+  };
+};
 
 const Blogs = ({ blogs }: { blogs: Array<BlogType> }) => {
   return (
