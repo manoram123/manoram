@@ -1,11 +1,7 @@
 import { BlogType } from "@/types/blog";
 import BlogClient from "./BlogClient";
 
-type BlogProps = {
-  blogs: Array<BlogType>;
-};
-
-const Blogs = ({ blogs }: any) => {
+const Blogs = ({ blogs }: { blogs: Array<BlogType> }) => {
   return (
     <div className="">
       <div className="px-5 md:px-0 md:w-3/5 mx-auto">
