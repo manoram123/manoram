@@ -55,8 +55,16 @@ const BlogDetailsClient: React.FC<BlogDetailsClientProps> = ({ blog }) => {
                 </div>
               </div>
             </motion.div>
-            <motion.div variants={animationItemVariants}>
-              <Markdown>{blog.node.content.markdown}</Markdown>
+            <motion.div
+              variants={animationItemVariants}
+              className="content text-lg"
+            >
+              <Markdown>
+                {blog.node.content.markdown
+                  .replace(/align="center"/g, "")
+                  .replace(/align="left"/g, "")
+                  .replace(/align="right"/g, "")}
+              </Markdown>
             </motion.div>
 
             <motion.div variants={animationItemVariants}>
@@ -66,7 +74,7 @@ const BlogDetailsClient: React.FC<BlogDetailsClientProps> = ({ blog }) => {
                   return (
                     <div
                       key={ind}
-                      className="px-3 py-2 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-900 rounded-lg"
+                      className="px-3 py-2 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 rounded-lg"
                     >
                       <span>{val.name}</span>
                     </div>

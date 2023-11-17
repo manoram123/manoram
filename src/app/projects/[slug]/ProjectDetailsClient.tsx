@@ -5,10 +5,8 @@ import { animationContainer, animationItemVariants } from "@/common/constants";
 import { BlogType } from "@/types/blog";
 import Link from "next/link";
 import { FiArrowUpRight, FiChevronLeft } from "react-icons/fi";
-import Markdown from "react-markdown";
-import Button from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
-
+import Markdown from "react-markdown";
 type ProjectType = {
   name: string;
   slug: string;
@@ -26,6 +24,7 @@ const ProjectDetailsClient: React.FC<ProjectDetailClientProps> = ({
   blog,
 }) => {
   const router = useRouter();
+
   return (
     <div className="mt-16 md:mt-24">
       <motion.div
@@ -65,8 +64,19 @@ const ProjectDetailsClient: React.FC<ProjectDetailClientProps> = ({
             </div>
             {blog?.node ? (
               <div className="flex flex-col gap-14">
-                <motion.div variants={animationItemVariants}>
-                  <Markdown>{blog.node.content.markdown}</Markdown>
+                <motion.div
+                  variants={animationItemVariants}
+                  className="text-lg content"
+                >
+                  <Markdown>
+                    {blog.node.content.markdown
+                      .replace(/align="center"/g, "")
+                      .replace(/align="left"/g, "")
+                      .replace(/align="right"/g, "")}
+                  </Markdown>
+                  {/* <ReactMarkdown remarkPlugins={[gfm]}>
+                    {blog.node.content.markdown}
+                  </ReactMarkdown> */}
                 </motion.div>
 
                 <motion.div variants={animationItemVariants}>
@@ -76,7 +86,7 @@ const ProjectDetailsClient: React.FC<ProjectDetailClientProps> = ({
                       return (
                         <div
                           key={ind}
-                          className="px-3 py-2 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-900 rounded-lg"
+                          className="px-3 py-2 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 rounded-lg"
                         >
                           <span>{val.name}</span>
                         </div>
