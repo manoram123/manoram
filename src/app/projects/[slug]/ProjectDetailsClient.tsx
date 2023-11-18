@@ -66,7 +66,7 @@ const ProjectDetailsClient: React.FC<ProjectDetailClientProps> = ({
               <div className="flex flex-col gap-14">
                 <motion.div
                   variants={animationItemVariants}
-                  className="text-lg content"
+                  className="text-lg content tracking-tight leading-snug"
                 >
                   <Markdown>
                     {blog.node.content.markdown
