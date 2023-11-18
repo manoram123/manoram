@@ -9,6 +9,7 @@ export const fetchBlog = async (query: string) => {
       body: JSON.stringify({
         query,
       }),
+      cache: "no-store",
     });
     const { data } = await response.json();
     return {
@@ -30,6 +31,7 @@ export const fetchSingle = async (query: string) => {
       body: JSON.stringify({
         query,
       }),
+      cache: "no-store",
     });
     const { data } = await response.json();
     return {

@@ -2,8 +2,7 @@ import { PROJECTS } from "@/common/projects";
 import { fetchSingle } from "@/helper/fetchBlog";
 import React from "react";
 import ProjectDetailsClient from "./ProjectDetailsClient";
-import fs from "fs";
-import path from "path";
+
 const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
@@ -36,15 +35,6 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
 
   const blog = await fetchSingle(query);
   const project = PROJECTS.find((project) => project.slug === slug);
-
-  const markdownPath = path.join(
-    process.cwd(),
-    "src",
-    "content",
-    "projects",
-    `${slug}.md`
-  );
-  const markdownContent = fs.readFileSync(markdownPath, "utf-8");
 
   return (
     <div className="">
