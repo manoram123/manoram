@@ -24,13 +24,13 @@ const HoverImage: React.FC<{ blog: BlogType }> = ({ blog }) => {
   };
 
   return (
-    <div className="flex relative overflow-visible">
+    <div className="md:flex relative overflow-visible">
       <Link
         href={`/blog/${blog.node.slug}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
-        className="flex items-center justify-between gap-10 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+        className="flex items-center justify-between gap-3 md:gap-10 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
       >
         <div className="flex flex-col gap-2 md:flex-row md:gap-12">
           <p className="mt-1">

@@ -18,5 +18,8 @@ export type ProjectType = {
     };
     readTimeInMinutes?: number;
     views?: number;
+    tags?: Array<{
+      name?: string;
+    }>;
   };
 };

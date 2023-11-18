@@ -37,7 +37,7 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
           </motion.p>
         </div>
 
-        <div className="flex flex-col gap-16 md:gap-10">
+        <div className="flex flex-col gap-16 md:gap-14">
           {/* My Projects */}
           {projects && projects.length > 0 ? (
             projects.map((project) => {
@@ -50,7 +50,7 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
                   <div className="col-span-6 md:col-span-2 rounded-md overflow-hidden">
                     <Link href={`/projects/${project.slug}`}>
                       <Image
-                        className="h-40 object-cover"
+                        className="h-64 md:h-40 object-cover"
                         src={project?.node?.coverImage?.url || Placeholder}
                         priority
                         height={500}
@@ -59,23 +59,39 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
                       />
                     </Link>
                   </div>
-                  <div className="col-span-6 md:col-span-4 tracking-wider flex flex-col gap-2">
+                  <div className="col-span-6 md:col-span-4 tracking-wider flex flex-col justify-between gap-2">
                     <p className="text-xl font-bold tracking-tight flex items-center gap-2">
-                      <Link href={`/projects/${project.slug}`}>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="text-ellipsis line-clamp-1"
+                      >
                         {project.name}
                       </Link>
                       <span className="text-neutral-500 dark:text-neutral-400 text-xs">
                         &#x2022;
-                      </span>{" "}
+                      </span>
                       <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
                         {project.date}
                       </span>
                     </p>
-                    <p className="text-neutral-500 dark:text-neutral-400">
+                    <p className="text-neutral-500 dark:text-neutral-400 line-clamp-2">
                       {project?.node?.brief}
                     </p>
+                    <div className="flex gap-3 flex-wrap">
+                      {project?.node?.tags &&
+                        project.node.tags.map((val, ind) => {
+                          return (
+                            <div
+                              key={ind}
+                              className="text-xs capitalize px-2 py-1 text-neutral-500 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 rounded-md"
+                            >
+                              <span>{val.name}</span>
+                            </div>
+                          );
+                        })}
+                    </div>
                     <Link
-                      className="mt-auto flex items-center gap-1 hover:gap-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all duration-300"
+                      className="flex items-center gap-1 hover:gap-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all duration-300"
                       href={`/projects/${project.slug}`}
                     >
                       <span>Read More</span>

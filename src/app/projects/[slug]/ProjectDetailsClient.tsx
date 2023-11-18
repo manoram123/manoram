@@ -86,7 +86,7 @@ const ProjectDetailsClient: React.FC<ProjectDetailClientProps> = ({
                       return (
                         <div
                           key={ind}
-                          className="px-3 py-2 text-neutral-600 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 rounded-lg"
+                          className="px-3 py-2 capitalize text-neutral-500 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 rounded-lg"
                         >
                           <span>{val.name}</span>
                         </div>

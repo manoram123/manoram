@@ -36,6 +36,9 @@ const Projects = async () => {
             }
             readTimeInMinutes
             views
+            tags {
+              name
+            }
           }
         }
       }
