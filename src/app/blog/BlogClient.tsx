@@ -31,7 +31,7 @@ const BlogClient: React.FC<BlogClientProps> = ({ blogs }) => {
             variants={animationItemVariants}
             className="text-neutral-500 dark:text-neutral-400 md:w-3/5 mt-2"
           >
-            My recent blog related to web development and coding
+            My recent blog related to web development and coding.
           </motion.p>
         </div>
 

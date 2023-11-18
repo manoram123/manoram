@@ -9,10 +9,10 @@ import { animationContainer } from "@/common/constants";
 
 const PhotoGallery = () => {
   const gallery = [
-    { name: "manoram", image: Manoram },
-    { name: "me", image: Me },
-    { name: "view", image: View },
-    { name: "friends", image: Friends },
+    { name: "manoram", image: Manoram, rotation: -5 },
+    { name: "me", image: Me, rotation: 10 },
+    { name: "view", image: View, rotation: -10 },
+    { name: "friends", image: Friends, rotation: -20 },
   ];
 
   const imageAnimationVariant: Variants = {
@@ -25,7 +25,10 @@ const PhotoGallery = () => {
       {gallery.map((image, ind) => {
         return (
           <motion.div
-            variants={imageAnimationVariant}
+            variants={{
+              initial: { x: -32, opacity: 0, rotate: image.rotation - 10 },
+              animate: { x: 0, opacity: 1, rotate: image.rotation },
+            }}
             whileHover={{ scale: 1.3, zIndex: 1, rotate: 0 }}
             key={image.name}
             className={`relative h-54 w-48 rounded-lg overflow-hidden ${
