@@ -32,12 +32,12 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
             variants={animationItemVariants}
             className="text-neutral-500 dark:text-neutral-400 md:w-3/5 mt-2"
           >
-            I have included some of my projects I am currently working on or
-            haved developed in the past.
+            Some of the interesting projects that I've had the opportunity to
+            work on.
           </motion.p>
         </div>
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-16 md:gap-10">
           {/* My Projects */}
           {projects && projects.length > 0 ? (
             projects.map((project) => {
@@ -48,18 +48,22 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
                   className="grid grid-cols-6 gap-6"
                 >
                   <div className="col-span-6 md:col-span-2 rounded-md overflow-hidden">
-                    <Image
-                      className="h-40 object-cover"
-                      src={project?.node?.coverImage?.url || Placeholder}
-                      priority
-                      height={500}
-                      width={500}
-                      alt={project.slug || ""}
-                    />
+                    <Link href={`/projects/${project.slug}`}>
+                      <Image
+                        className="h-40 object-cover"
+                        src={project?.node?.coverImage?.url || Placeholder}
+                        priority
+                        height={500}
+                        width={500}
+                        alt={project.slug || ""}
+                      />
+                    </Link>
                   </div>
                   <div className="col-span-6 md:col-span-4 tracking-wider flex flex-col gap-2">
                     <p className="text-xl font-bold tracking-tight flex items-center gap-2">
-                      {project.name}{" "}
+                      <Link href={`/projects/${project.slug}`}>
+                        {project.name}
+                      </Link>
                       <span className="text-neutral-500 dark:text-neutral-400 text-xs">
                         &#x2022;
                       </span>{" "}
@@ -71,7 +75,7 @@ const ProjectsClient: React.FC<ProjectClientProps> = ({ projects }) => {
                       {project?.node?.brief}
                     </p>
                     <Link
-                      className="mt-2 flex items-center gap-1 hover:gap-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all duration-300"
+                      className="mt-auto flex items-center gap-1 hover:gap-2 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300 transition-all duration-300"
                       href={`/projects/${project.slug}`}
                     >
                       <span>Read More</span>

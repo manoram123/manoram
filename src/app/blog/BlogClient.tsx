@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogType } from "@/types/blog";
+import HoverImage from "@/components/HoverImage";
 
 type BlogClientProps = {
   blogs: Array<BlogType>;
@@ -34,7 +35,7 @@ const BlogClient: React.FC<BlogClientProps> = ({ blogs }) => {
           </motion.p>
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 relative">
           {/* My Projects */}
           {blogs && blogs.length > 0 ? (
             blogs.map((blog) => {
@@ -43,28 +44,7 @@ const BlogClient: React.FC<BlogClientProps> = ({ blogs }) => {
                   key={blog.node.slug}
                   variants={animationItemVariants}
                 >
-                  <Link
-                    href={`/blog/${blog.node.slug}`}
-                    className="flex items-center justify-between gap-10 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
-                  >
-                    <div className="flex flex-col gap-2 md:flex-row md:gap-12">
-                      <p className="mt-1">
-                        {new Date(blog.node.publishedAt).toLocaleDateString(
-                          "en-US",
-                          { year: "numeric", month: "short", day: "numeric" }
-                        )}
-                      </p>
-                      <p className="text-base flex-1">{blog.node.title}</p>
-                    </div>
-                    <Image
-                      className="h-28 w-28 object-cover rounded-lg block md:hidden"
-                      priority
-                      src={blog.node.coverImage.url}
-                      height={500}
-                      width={500}
-                      alt={blog.node.title}
-                    />
-                  </Link>
+                  <HoverImage blog={blog} />
                 </motion.div>
               );
             })

@@ -8,6 +8,7 @@ import Link from "next/link";
 import TechSkills from "@/components/TechSkills";
 import { animationContainer, animationItemVariants } from "@/common/constants";
 import { BlogType } from "@/types/blog";
+import HoverImage from "@/components/HoverImage";
 
 type HomeProps = {
   blogs?: Array<BlogType>;
@@ -93,31 +94,7 @@ const HomeClient: React.FC<HomeProps> = ({ blogs }) => {
               </p>
               <div className="flex flex-col gap-8">
                 {blogs.map((blog) => {
-                  return (
-                    <Link
-                      key={blog.node.slug}
-                      href={`/blog/${blog.node.slug}`}
-                      className="flex items-center justify-between gap-10 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
-                    >
-                      <div className="flex flex-col gap-2 md:flex-row md:gap-12">
-                        <p className="mt-1">
-                          {new Date(blog.node.publishedAt).toLocaleDateString(
-                            "en-US",
-                            { year: "numeric", month: "short", day: "numeric" }
-                          )}
-                        </p>
-                        <p className="text-base flex-1">{blog.node.title}</p>
-                      </div>
-                      <Image
-                        className="h-28 w-28 object-cover rounded-lg block md:hidden"
-                        priority
-                        src={blog.node.coverImage.url}
-                        height={500}
-                        width={500}
-                        alt={blog.node.title}
-                      />
-                    </Link>
-                  );
+                  return <HoverImage key={blog.node.slug} blog={blog} />;
                 })}
                 <div className="flex">
                   <Link
