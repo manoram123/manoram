@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Hello World! I am a software developer and UI designer.",
     siteName: "https://manoram.vercel.app",
     type: "website",
-    images: ["/images/manoram.jpg"],
+    images: ["/images/og_image.jpg"],
   },
 };
 
