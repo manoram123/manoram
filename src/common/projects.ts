@@ -1,5 +1,11 @@
 export const PROJECTS = [
   {
+    name: "EStore: E-Commerce Web Appplication",
+    slug: "estore-e-commerce-web-appplication",
+    link: "https://estore-nepal.vercel.app",
+    date: "2024",
+  },
+  {
     name: "Stockinerary Mobile App",
     slug: "stockinerary",
     link: "https://stockinerary.com",

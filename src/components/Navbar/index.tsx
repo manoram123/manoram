@@ -41,43 +41,44 @@ const Navbar: React.FC = () => {
       <div className="h-full bg-white dark:bg-neutral-950 rounded-lg px-5 md:px-0 md:w-3/5 mx-auto flex items-center justify-between flex-wrap">
         <div className="order-0">
           <Link href={"/"} className="text-neutral-950 dark:text-neutral-100">
-            <Logo size={52} />
+            <Logo size={42} />
           </Link>
         </div>
-        <ul
-          className={`bg-neutral-100 dark:bg-neutral-800 md:bg-transparent dark:md:bg-transparent list-none ${
-            isToggled ? "flex flex-col" : "hidden"
-          } md:flex md:flex-row order-1 md:order-0 w-full md:w-fit md:py-0 py-3 md:px-0 px-3 rounded-lg items-center gap-3 md:gap-6 shadow-sm md:shadow-none`}
+        <div
+          className={`absolute md:relative px-4 w-full md:w-auto top-14 right-4 left-0 md:top-0 md:right-0 transition-opacity duration-300 ${
+            isToggled
+              ? "opacity-100 z-10"
+              : "opacity-0 md:opacity-100 hidden md:flex"
+          }`}
         >
-          {NAVLINKS.map((val) => {
-            return (
-              <li
-                key={val.routeName}
-                className={`flex items-center h-8 px-3 rounded ${
-                  pathname === val.href &&
-                  "bg-neutral-200 dark:bg-neutral-900 dark:md:bg-neutral-800"
-                } w-full md:w-fit transition-colors duration-300`}
-              >
+          <div className="flex flex-col md:flex-row gap-6 border-2 p-2 md:p-0 dark:border-neutral-800 md:border-0 md:m-0 rounded-md bg-white dark:bg-neutral-950 md:bg-transparent">
+            {NAVLINKS.map((nav, ind) => {
+              return (
                 <Link
-                  onClick={() => {
-                    setIsToggled(false);
-                  }}
-                  href={val.href}
+                  key={ind}
+                  onClick={() => setIsToggled(false)}
+                  className={`text-secondary hover:text-default transition-colors duration-300 px-4 py-2 rounded-md ${
+                    pathname.includes(nav.href)
+                      ? "bg-gray-100 dark:bg-neutral-800"
+                      : ""
+                  }`}
+                  href={nav.href}
                 >
-                  {val.name}
+                  {nav.name}
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
+              );
+            })}
+          </div>
+        </div>
         <div className="order-0 md:order-1 flex items-center gap-1">
           <div className="flex items-center gap-1">
-            <Button
-              className="text-lg h-8 w-8 hover:bg-gray-100"
-              variant="light"
+            <Link
+              className="text-lg h-8 w-8 hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center justify-center rounded-md"
+              href={"https://github.com/manoram123"}
+              target="_blank"
             >
               <BsGithub />
-            </Button>
+            </Link>
             <DarkModeSwitch />
           </div>
           <div className="block md:hidden">
